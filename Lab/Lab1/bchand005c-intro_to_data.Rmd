@@ -1,11 +1,11 @@
 ---
 title: "Introduction to data"
 output:
-  pdf_document: default
   html_document:
     css: ./lab.css
     highlight: pygments
     theme: cerulean
+  pdf_document: default
 ---
 
 Some define Statistics as the field that focuses on turning information into
@@ -427,11 +427,11 @@ very simple expressions.
     data set and see how it relates to BMI. List the variable you chose, why you
     might think it would have a relationship to BMI,  and indicate what the 
     figure seems to suggest.   
-    ```This box plot shows participants in excellent health conditon has better 
+    This box plot shows participants in excellent health conditon has better 
     (lower value) BMI than   other category.  
     Another interesting variable to relate to BMI is gender. The general health
     condition and eating habits of gender are connected to BMI. The figure shows
-    females have better BMI than men.```
+    females have better BMI than men.
     ```{r}
      boxplot(bmi ~ cdc$gender)
     ```
