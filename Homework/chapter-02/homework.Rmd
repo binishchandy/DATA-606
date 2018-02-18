@@ -2,7 +2,9 @@
 title: "Chapter 2 - Probability"
 author: "Binish Kurian Chandy"
 date: "February 17, 2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -39,7 +41,8 @@ d. 31.1%
 e. 68.9%
 ```
 ```
-f. p(below poverty) * p(foreign language) = .104 * .165 = .01715 not equal to p(below poverty and foreign language) ie .042. So the events are dependent.
+f. p(below poverty) * p(foreign language) = .104 * .165 = .01715 not equal to 
+p(below poverty and foreign language) ie .042. So the events are dependent.
 ```
 #### 2.20
 ```
@@ -93,8 +96,8 @@ c. P(Fiction book) * P(Hardcover book)
    = 72/95 * 28/95 = .2233
 ```
 ```
-d. Since the sample space is relatively large, adding or removing a sample doesn't make much
-   difference in the outcome.
+d. Since the sample space is relatively large, adding or removing a sample 
+   doesn't make much difference in the outcome.
 ```
 
 #### 2.38
@@ -118,7 +121,10 @@ b. Expected revenue for 120 passengers = 120 * E[X] = 1884
 #### 2.44
 a.
 ```{r}
-sample_income <- c("$1 to $9,999","$10,000 to $14,999","$15,000 to $24,999","$25,000 to $34,999","$35,000 to $49,999","$50,000 to $64,999","$65,000 to $74,999","$75,000 to $99,999","$100,000 or more")
+sample_income <- c("$1 to $9,999","$10,000 to $14,999","$15,000 to $24,999",
+                   "$25,000 to $34,999","$35,000 to $49,999",
+                   "$50,000 to $64,999","$65,000 to $74,999",
+                   "$75,000 to $99,999","$100,000 or more")
 
 sample_percent <- c(2.2,4.7,15.8,18.3,21.2,13.9,5.8,8.4,9.7)
 
@@ -138,7 +144,8 @@ c. Assumption is income and gender are independent.
                                                         = 26%
 ```
 ```
-d. The new data shows the relationship ie females make less than $50k per year is 71.58%.
+d. The new data shows the relationship ie females make less than $50k per year 
+   is 71.58%.
    This is different from what we calculated in step c. 
    So the gender and income are not independent.
 ```
