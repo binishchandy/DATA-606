@@ -1,0 +1,199 @@
+---
+title: "Week 03 - Assignment"
+author: "Binish Kurian Chandy"
+date: "February 16, 2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+3.2.a
+1 - Z < -1.13
+```
+```{r echo=FALSE}
+1 - .1292
+# Create data for the area to shade
+cord.x <- c(-1.13,seq(-1.13,3,0.01),3) 
+cord.y <- c(0,dnorm(seq(-1.13,3,0.01)),0) 
+
+# Make a curve
+curve(dnorm(x,0,1), xlim=c(-3,3)) 
+
+# Add the shaded area.
+polygon(cord.x,cord.y,col='skyblue')
+```
+
+```
+3.2.b
+```
+```{r echo=FALSE}
+print(0.5714)
+# Create data for the area to shade
+cord.x <- c(-3,seq(-3,0.18,0.01),0.18) 
+cord.y <- c(0,dnorm(seq(-3,0.18,0.01)),0) 
+
+# Make a curve
+curve(dnorm(x,0,1), xlim=c(-3,3)) 
+
+# Add the shaded area.
+polygon(cord.x,cord.y,col='skyblue')
+```
+
+```
+3.2.c
+```
+```{r echo=FALSE}
+print(0.9998)
+# Create data for the area to shade
+cord.x <- c(-8,seq(-8,8,0.01),8) 
+cord.y <- c(0,dnorm(seq(-8,8,0.01)),0) 
+
+# Make a curve
+curve(dnorm(x,0,1), xlim=c(-10,10)) 
+
+# Add the shaded area.
+polygon(cord.x,cord.y,col='skyblue')
+```
+
+```
+3.2.d
+```
+```{r echo=FALSE}
+1 - .6915 + .3085
+colorArea <- function(from, to, density, ..., col="skyblue", dens=NULL){
+  y_seq <- seq(from, to, length.out=500)
+  d <- c(0, density(y_seq, ...), 0)
+  polygon(c(from, y_seq, to), d, col=col, density=dens)
+}
+
+curve(dnorm(x), from=-3, to=3,
+      xlab = "x")
+
+colorArea(from=-3, to=qnorm(.3085), dnorm)
+colorArea(from=qnorm(0.6915), to=3, dnorm, mean=0, sd=1)
+```
+```
+3.4
+```
+```
+a. 
+```
+Men: $N(\mu = 4313,\sigma = 583)$  
+   Women: $N(\mu = 5261,\sigma = 807)$
+
+```
+b. 
+```
+$\sf{Z_{Leo}}$ = 
+```{r}
+(4948 - 4313) / 583 
+```
+$\sf{Z_{Mary}}$ = 
+```{r}
+(5513 - 5261) / 807 
+```
+```
+Leo scored 1.09 SD above the mean on the Men group and Mary scored 0.31 SD above the mean on the women group
+```
+```
+c.
+```
+```
+The lesser Z score a preson gets, faster he is. Leo's Z score is above 1.09 SD from mean while   Mary's score is 0.31 SD above mean. So Mary performed better than Leo comparing with their group.
+```
+```
+d.
+```
+```{r}
+1 - .8621
+```
+```
+e.
+```
+```{r}
+1 - .6217
+```
+```
+f
+```
+```
+Answer to part (b) would not change as Z-scores can be calculated for distributions that are not normal. However, we could not answer parts (c)-(e) since we cannot use the normal probability table to calculate probabilities and percentiles without a normal model.
+```
+```
+3.17
+```
+```
+a. 17/25 -> 68% of the data are within 1 SD of the mean, 24/25 -> 96% of the data are within 2 SD and 100% are within 3 SD of the mean.
+```
+```
+b. The distribution is unimodal and symmetric. The superimposed normal curve seems to approximate the distribution pretty well. The points on the normal probability plot also seem to follow a straight line. There are possible outliers on the lower and higer end that are apparent in both graphs, but it is not too extreme. We can say that the distribution is nearly normal.
+```
+```
+3.22
+```
+```{r}
+#a.
+(1 - 0.02)^9 * 0.02
+```
+```{r}
+#b.
+(1 - 0.02)^100
+```
+```{r}
+#c.
+#average
+1 / .02
+#SD
+sqrt((1 - 0.02) / 0.02^2)
+```
+```{r}
+#d.
+#average
+1 / .05
+#SD
+sqrt((1 - 0.05) / 0.05^2)
+```
+```
+e.
+When p is smaller, the event is rarer, meaning the expected number of trials before a success (finding a defective transistor) and the standard deviation of the waiting time are higher.
+```
+```
+3.38
+```
+```
+a. C(3,2) * (0.51)^2 * (1 - 0.51) = 0.3823
+```
+```
+b. GBB, BGB, BBG
+P(GBB) = (1 - 0.51) * 0.51 * 0.51 = 0.1274
+P(BGB) = 0.51 * (1 - 0.51) * 0.51 = 0.1274
+P(BBG) = 0.51 * 0.51 * (1 - 0.51) = 0.1274
+Total probability = P(GBB) + P(BGB) + P(BBG) = 0.3823 = solution of (a)
+```
+```
+Possible ways 3 boys are born out of 8 kids will be C(8, 3) = 56.
+It would be tedious to find the probability of 56 cases individually and add.
+With binomial model, it's just an application of formula
+ => C(8, 3) * 0.51^3 * (1 - 0.51)^5 = 0.21
+```
+```
+3.42
+```
+```
+a. C(9, 2) * (0.15)^3 * (1 - 0.15)^7
+```
+```{r}
+36 * (0.15)^3 * (1 - 0.15)^7
+```
+```
+b. Since the serves are independent, probability of successful 10th serve = 15%
+```
+```
+c. In (a) since we are using negative binomial model, we are considering the probability of two successful serves in the first 9 attempts. But in (b) we are concerned about the last serve only.
+This is making the difference.
+```
