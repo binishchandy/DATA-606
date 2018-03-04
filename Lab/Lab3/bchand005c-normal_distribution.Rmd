@@ -242,7 +242,8 @@ theoretical probabilities will be.
     between 170 cm and 180 cm?
     ```
     ```{r}
-    pnorm(q = 180, mean = fhgtmean, sd = fhgtsd) - pnorm(q = 170, mean = fhgtmean, sd = fhgtsd)
+    pnorm(q = 180, mean = fhgtmean, sd = fhgtsd) 
+    - pnorm(q = 170, mean = fhgtmean, sd = fhgtsd)
     sum(fdims$hgt > 170 & fdims$hgt <= 180) / length(fdims$hgt)
     ```
     ```

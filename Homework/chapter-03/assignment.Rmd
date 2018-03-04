@@ -3,8 +3,8 @@ title: "Week 03 - Assignment"
 author: "Binish Kurian Chandy"
 date: "February 16, 2018"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -98,13 +98,16 @@ $\sf{Z_{Mary}}$ =
 (5513 - 5261) / 807 
 ```
 ```
-Leo scored 1.09 SD above the mean on the Men group and Mary scored 0.31 SD above the mean on the women group
+Leo scored 1.09 SD above the mean on the Men group and Mary scored 0.31 SD above
+the mean on the women group
 ```
 ```
 c.
 ```
 ```
-The lesser Z score a preson gets, faster he is. Leo's Z score is above 1.09 SD from mean while   Mary's score is 0.31 SD above mean. So Mary performed better than Leo comparing with their group.
+The lesser Z score a preson gets, faster he is. Leo's Z score is above 1.09 SD 
+from mean while   Mary's score is 0.31 SD above mean. So Mary performed better 
+than Leo comparing with their group.
 ```
 ```
 d.
@@ -122,16 +125,24 @@ e.
 f
 ```
 ```
-Answer to part (b) would not change as Z-scores can be calculated for distributions that are not normal. However, we could not answer parts (c)-(e) since we cannot use the normal probability table to calculate probabilities and percentiles without a normal model.
+Answer to part (b) would not change as Z-scores can be calculated for 
+distributions that are not normal. However, we could not answer parts (c)-(e) 
+since we cannot use the normal probability table to calculate probabilities and 
+percentiles without a normal model.
 ```
 ```
 3.17
 ```
 ```
-a. 17/25 -> 68% of the data are within 1 SD of the mean, 24/25 -> 96% of the data are within 2 SD and 100% are within 3 SD of the mean.
+a. 17/25 -> 68% of the data are within 1 SD of the mean, 24/25 -> 96% of the 
+data are within 2 SD and 100% are within 3 SD of the mean.
 ```
 ```
-b. The distribution is unimodal and symmetric. The superimposed normal curve seems to approximate the distribution pretty well. The points on the normal probability plot also seem to follow a straight line. There are possible outliers on the lower and higer end that are apparent in both graphs, but it is not too extreme. We can say that the distribution is nearly normal.
+b. The distribution is unimodal and symmetric. The superimposed normal curve 
+seems to approximate the distribution pretty well. The points on the normal 
+probability plot also seem to follow a straight line. There are possible 
+outliers on the lower and higer end that are apparent in both graphs, but it is 
+not too extreme. We can say that the distribution is nearly normal.
 ```
 ```
 3.22
@@ -160,7 +171,9 @@ sqrt((1 - 0.05) / 0.05^2)
 ```
 ```
 e.
-When p is smaller, the event is rarer, meaning the expected number of trials before a success (finding a defective transistor) and the standard deviation of the waiting time are higher.
+When p is smaller, the event is rarer, meaning the expected number of trials 
+before a success (finding a defective transistor) and the standard deviation of 
+the waiting time are higher.
 ```
 ```
 3.38
@@ -194,6 +207,8 @@ a. C(9, 2) * (0.15)^3 * (1 - 0.15)^7
 b. Since the serves are independent, probability of successful 10th serve = 15%
 ```
 ```
-c. In (a) since we are using negative binomial model, we are considering the probability of two successful serves in the first 9 attempts. But in (b) we are concerned about the last serve only.
+c. In (a) since we are using negative binomial model, we are considering the 
+probability of two successful serves in the first 9 attempts. But in (b) we are 
+concerned about the last serve only.
 This is making the difference.
 ```
