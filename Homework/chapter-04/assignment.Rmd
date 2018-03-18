@@ -114,3 +114,53 @@ c(lo,hi)
 ```
 (c)  They agree, and both support rejecting the null hypothesis. In the 2-sided hypothesis testing, the p-value returned is so small that it is too far less than the significance level of 0.10, while the confidence interval does not include the average IQ of 100 for the population
 ```
+
+```
+4.34 A sampling distribution of the mean is a probability distribution of mean obtained through a large number of samples drawn from a specific population. When the number of samples increase the
+shape of the distribution becomes more normal. Also the SD becomes less as sample size increases this 
+makes curve variable. The center of the distribution comes close to the population
+mean when sample size increase.
+```
+
+```
+4.40
+(a) 
+```
+```{r}
+pnorm(10500, 9000, 1000, lower.tail = FALSE)
+```
+```
+(b) The
+population SD is known and the data are nearly normal, so the sample mean will be
+nearly normal with distribution N (μ, σ/ sqrt(n)),i.e. N (9000, 258.2).
+
+(c)
+```
+```{r}
+pnorm(10500, mean = 9000, sd = 1000/sqrt(15), lower.tail = FALSE)
+```
+```
+(d)
+```
+```{r}
+par(mfrow = c(2, 1))
+
+xpopulation <- 7000:12000
+ypopulation <- dnorm(xpopulation,mean=9000,sd=1000)
+
+xsample <- 7000:12000
+ysample <- dnorm(xsample,mean=9000,sd=1000/sqrt(15))
+
+plot(xpopulation,ypopulation)
+plot(xsample, ysample)
+```
+```
+(e) We could not estimate (a) without a nearly normal population distribution. We also could
+not estimate (c) since the sample size is not sufficient to yield a nearly normal sampling distribu-
+tion if the population distribution is not nearly normal.
+```
+
+```
+4.48 z score is directly proportional to sqrt(n). So when n increases z scores increases so does
+p value.
+```
