@@ -1,0 +1,116 @@
+---
+title: "Assignment - Chapter 04"
+author: "Binish Kurian Chandy"
+date: "March 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+4.4
+(a) Mean: 171.1 Medain: 170.3
+(b) SD: 9.4 IQR: 177.8 - 163.8 = 14
+(c) Z180 = 
+```
+```{r}
+(180 - 171.1) / 9.4
+```
+```
+which is below 2 SD. So not unusually tall.
+
+Z155 = 
+```
+```{r}
+(155 - 171.1) / 9.4
+```
+```
+which is also below 2 SD. So not unusually short.
+
+(e) We use the SE, which is 
+```
+```{r}
+9.4/sqrt(507)
+```
+
+```
+4.14
+(a) False. Inference is made on the population parameter, not the point estimate. The point estimate 
+is always in the confidence interval.
+
+(b) False. Provided the sample is randomly selected and sample size way greater 30, we can be lenient
+with the skew. So the normal distribution can be applied to generate confidence interval.
+
+(c) False. The confidence interval is not about sample mean.
+
+(d) True. Definition of confidence interval.
+
+(e) True. 
+
+(f) False. In the calculation of the standard error, we divide the standard deviation by the
+square root of the sample size. To cut the SE (or margin of error) in one third, we would need to
+sample 3^2 = 9 times the number of people in the initial sample.
+
+(g) True. The margin of error is half the width of the interval
+```
+```{r}
+(89.11 - 80.31) / 2
+```
+
+```
+4.24
+
+(a) Independence: The sample is random and 36 children would almost certainly make up less than 
+10% of the total school children in the city. The sample size is alteast 30. The data is slightly 
+skewed to left but the sample is greater than 30, we can apply normal model can be applied.
+
+(b) H0: u = 32  HA: u < 32 
+alpha = 0.10
+```
+```{r}
+(z <- (30.69 - 32) * sqrt(36) / 4.31 )
+```
+```
+p = 0.0344 
+p < alpha, so we reject null hypothesis.
+
+(c) If the null hypothesis is true, the probability of observing a sample mean at least as large as
+32 months for a sample of 36 students is 0.0344. That is, if the null hypothesis is true, we would not
+see such a large mean.
+
+(d) z* value for 90% confidence interval is 1.64
+```
+```{r}
+(lo <- 30.69 - 1.64 * 4.31 / 6)
+(hi <- 30.69 + 1.64 * 4.31 / 6)
+c(lo,hi)
+```
+
+```
+(e) Yes, they agree. Both support the alternative hypothesis in providing convincing evidence that the average age at which gifted children first count to 10 successfully can be less than the general average of 32 months.
+```
+
+```
+4.26
+(a) H0: u = 100 HA: u not equal 100
+alpha = 0.10
+```
+```{r}
+(z <- (118.2 - 100) * sqrt(36) / 6.5)
+(p <- 2 * (1 - .9998))
+```
+```
+p < alpha, so we reject null hypothesis.
+
+(b) z* value for 90% confidence interval is 1.64
+```
+```{r}
+(lo <- 118.2 - 1.64 * 6.5 / 6)
+(hi <- 118.2 + 1.64 * 6.5 / 6)
+c(lo,hi)
+```
+```
+(c)  They agree, and both support rejecting the null hypothesis. In the 2-sided hypothesis testing, the p-value returned is so small that it is too far less than the significance level of 0.10, while the confidence interval does not include the average IQ of 100 for the population
+```
