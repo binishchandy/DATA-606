@@ -37,11 +37,12 @@ which is also below 2 SD. So not unusually short.
 
 ```
 4.14
-(a) False. Inference is made on the population parameter, not the point estimate. The point estimate 
-is always in the confidence interval.
+(a) False. Inference is made on the population parameter, not the point estimate. 
+The point estimate is always in the confidence interval.
 
-(b) False. Provided the sample is randomly selected and sample size way greater 30, we can be lenient
-with the skew. So the normal distribution can be applied to generate confidence interval.
+(b) False. Provided the sample is randomly selected and sample size way greater 
+30, we can be lenient with the skew. So the normal distribution can be applied 
+to generate confidence interval.
 
 (c) False. The confidence interval is not about sample mean.
 
@@ -49,9 +50,10 @@ with the skew. So the normal distribution can be applied to generate confidence 
 
 (e) True. 
 
-(f) False. In the calculation of the standard error, we divide the standard deviation by the
-square root of the sample size. To cut the SE (or margin of error) in one third, we would need to
-sample 3^2 = 9 times the number of people in the initial sample.
+(f) False. In the calculation of the standard error, we divide the standard 
+deviation by the square root of the sample size. To cut the SE (or margin of 
+error) in one third, we would need to sample 3^2 = 9 times the number of people 
+in the initial sample.
 
 (g) True. The margin of error is half the width of the interval
 ```
@@ -62,9 +64,10 @@ sample 3^2 = 9 times the number of people in the initial sample.
 ```
 4.24
 
-(a) Independence: The sample is random and 36 children would almost certainly make up less than 
-10% of the total school children in the city. The sample size is alteast 30. The data is slightly 
-skewed to left but the sample is greater than 30, we can apply normal model can be applied.
+(a) Independence: The sample is random and 36 children would almost certainly 
+make up less than 10% of the total school children in the city. The sample size 
+is alteast 30. The data is slightly skewed to left but the sample is greater 
+than 30, we can apply normal model can be applied.
 
 (b) H0: u = 32  HA: u < 32 
 alpha = 0.10
@@ -76,8 +79,9 @@ alpha = 0.10
 p = 0.0344 
 p < alpha, so we reject null hypothesis.
 
-(c) If the null hypothesis is true, the probability of observing a sample mean at least as large as
-32 months for a sample of 36 students is 0.0344. That is, if the null hypothesis is true, we would not
+(c) If the null hypothesis is true, the probability of observing a sample mean 
+at least as large as 32 months for a sample of 36 students is 0.0344. 
+That is, if the null hypothesis is true, we would not
 see such a large mean.
 
 (d) z* value for 90% confidence interval is 1.64
@@ -89,7 +93,9 @@ c(lo,hi)
 ```
 
 ```
-(e) Yes, they agree. Both support the alternative hypothesis in providing convincing evidence that the average age at which gifted children first count to 10 successfully can be less than the general average of 32 months.
+(e) Yes, they agree. Both support the alternative hypothesis in providing 
+convincing evidence that the average age at which gifted children first count 
+to 10 successfully can be less than the general average of 32 months.
 ```
 
 ```
@@ -112,14 +118,19 @@ p < alpha, so we reject null hypothesis.
 c(lo,hi)
 ```
 ```
-(c)  They agree, and both support rejecting the null hypothesis. In the 2-sided hypothesis testing, the p-value returned is so small that it is too far less than the significance level of 0.10, while the confidence interval does not include the average IQ of 100 for the population
+(c)  They agree, and both support rejecting the null hypothesis. In the 2-sided 
+hypothesis testing, the p-value returned is so small that it is too far less 
+than the significance level of 0.10, while the confidence interval does not 
+include the average IQ of 100 for the population
 ```
 
 ```
-4.34 A sampling distribution of the mean is a probability distribution of mean obtained through a large number of samples drawn from a specific population. When the number of samples increase the
-shape of the distribution becomes more normal. Also the SD becomes less as sample size increases this 
-makes curve variable. The center of the distribution comes close to the population
-mean when sample size increase.
+4.34 A sampling distribution of the mean is a probability distribution of mean 
+obtained through a large number of samples drawn from a specific population. 
+When the number of samples increase the shape of the distribution becomes more 
+normal. Also the SD becomes less as sample size increases this 
+makes curve variable. The center of the distribution comes close to the 
+population mean when sample size increase.
 ```
 
 ```
@@ -131,8 +142,8 @@ pnorm(10500, 9000, 1000, lower.tail = FALSE)
 ```
 ```
 (b) The
-population SD is known and the data are nearly normal, so the sample mean will be
-nearly normal with distribution N (μ, σ/ sqrt(n)),i.e. N (9000, 258.2).
+population SD is known and the data are nearly normal, so the sample mean will 
+be nearly normal with distribution N (μ, σ/ sqrt(n)),i.e. N (9000, 258.2).
 
 (c)
 ```
@@ -155,12 +166,13 @@ plot(xpopulation,ypopulation)
 plot(xsample, ysample)
 ```
 ```
-(e) We could not estimate (a) without a nearly normal population distribution. We also could
-not estimate (c) since the sample size is not sufficient to yield a nearly normal sampling distribu-
-tion if the population distribution is not nearly normal.
+(e) We could not estimate (a) without a nearly normal population distribution. 
+We also could not estimate (c) since the sample size is not sufficient to yield 
+a nearly normal sampling distribution if the population distribution is not 
+nearly normal.
 ```
 
 ```
-4.48 z score is directly proportional to sqrt(n). So when n increases z scores increases so does
-p value.
+4.48 z score is directly proportional to sqrt(n). So when n increases z scores 
+increases so does p value.
 ```
