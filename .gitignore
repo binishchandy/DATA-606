@@ -38,3 +38,4 @@ more/
 
 .DS_Store
 rsconnect/
+*.Rproj
