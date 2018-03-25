@@ -1,0 +1,150 @@
+---
+title: "Assignment - Chapter 05"
+author: "Binish Kurian Chandy"
+date: "March 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+5.6
+```
+```{r}
+(sample_mean <- (65 + 77) / 2)
+n <- 25
+df <- n - 1
+(ME <- 77 - sample_mean)
+t <- abs(qt(.1/2, 24))
+SE <- ME / t
+(SD <- SE * sqrt(n))
+```
+
+```
+5.14
+
+(a)
+```
+```{r}
+SD <- 250 
+ME <- 25
+z <- 1.65
+n <- z^2 * SD^2 / ME^2 
+```
+```
+sample size should be greater than 
+```
+```{r}
+ceiling(n)
+```
+```
+(b)
+since sample size is directly proportional to the square of z score, Luke
+needs a sample size larger than Raina.
+
+(c)
+```
+```{r}
+SD <- 250 
+ME <- 25
+z <- 2.58
+n <- z^2 * SD^2 / ME^2 
+```
+```
+sample size should be greater than 
+```
+```{r}
+ceiling(n)
+```
+
+```
+5.20
+
+(a) There is no clear difference in the average reading and writing scores
+as the distribution is fairly normal around 0.
+
+(b) They are dependent.
+
+(c) H0: u(reading) - u(writing) = 0  
+    HA: u(reading) - u(writing) not equal 0
+    
+(d) Students are selected simple random sample and represent less than 10%
+of all students. The sample size is atleast 30. The box plots shows no obvious
+outliers so data is not skewed.
+
+(e) 
+```
+```{r}
+x = -0.545
+u = 8.887
+n = 200
+(SE = u / sqrt(n))
+(T <- (x - 0) / SE)
+(p <- pt(T, n - 1))
+```
+```
+Since p > 0.05, we cannot reject null hypothesis. The data doesn't provide
+convincing evidence for difference.
+```
+```
+(f) Type 2 Error, since we may have incorrectly failed to reject H0. 
+There may be difference, but we were unable to detect it.
+
+(g) Yes, since we failed to reject H0, which had a null value of 0.
+```
+```
+5.32
+u = u(automatic) - u(manual)
+H0: u = 0
+HA: u not equal to 0
+```
+```{r}
+x_auto <- 16.12
+x_manual <- 19.85
+sd_auto <- 3.58
+sd_manual <- 4.51
+n_auto <- n_manual <- 26
+(SE <- sqrt(sd_auto^2 / n_auto + sd_manual^2 / n_manual))
+(t <- ((x_auto - x_manual) - 0) / SE)
+df <- n_auto - 1
+(p <- pt(t, df))
+```
+```
+Since the p-value is less than significance level (0.05), we reject the null 
+hypothesis H0 and conclude that there is strong evidence of a difference in 
+fuel efficiency between manual and automatic transmissions.
+```
+```
+5.48
+a. H0: Average hours worked is the same for all educational attainments
+   HA: Atlease one pair of means are different
+   
+b. Independence: We don’t have any information on how the data were collected, 
+so we cannot assess independence. To proceed, we must assume the subjects in 
+each group are independent. In practice, we would inquire for more details. 
+
+Approx.normal: Fairly symmetrical with some categories like HS and Bachelor's
+have visible outliers so some skew. Since the sample size is fairly large,
+skew is acceptable.
+
+Constant variance: This condition is sufficiently met, as the standard 
+deviations are reasonably consistent across groups.
+
+            Df    Sum Sq    Mean Sq   F value   Pr(>F)
+degree      4     2006.16    501.54     2.19    0.0682
+Residuals  1167   267,382    229.12
+Total      1171   269388.16
+
+Calculation
+-----------
+Sum sq = Mean Sq * df = 501.54 * 4 = 2006.16
+Total Sum Sq = 2006.16 + 267382 = 269388.16
+Residuals Mean Sq = 267382 / 1167 = 229.12
+F value = 501.54 / 229.12 = 2.19
+
+(d) since p value (0.682) greater than 0.05, test fail to reject H0. 
+The data do not provide convincing evidence of a difference between the average
+hours worked for all educational attainments.
+```
