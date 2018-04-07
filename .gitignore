@@ -39,3 +39,4 @@ more/
 .DS_Store
 rsconnect/
 *.Rproj
+.Rproj.user

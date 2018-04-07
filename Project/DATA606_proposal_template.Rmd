@@ -1,0 +1,80 @@
+---
+title: DATA 606 Data Project Proposal
+author: Binish Kurian Chandy
+---
+
+### Data Preparation
+
+```{r setup, echo=TRUE, results='hide', warning=FALSE, message=FALSE}
+# load data
+require(tidyverse)
+require(psych)
+house_price <- as.tibble(read.csv("AmesHousing.csv", header = TRUE))
+
+df <- house_price %>%
+        filter(!is.na(Gr.Liv.Area), !is.na(SalePrice)) %>%
+        select(PID, Gr.Liv.Area, SalePrice)
+
+```
+
+
+### Research question 
+
+**You should phrase your research question in a way that matches up with the scope of inference your dataset allows for.**  
+Is living area (in square feet) of house predictive of it's sales price?
+
+
+### Cases 
+
+**What are the cases, and how many are there?**  
+Each case represent a house sale information from the Ames Assessor’s Office 
+used in computing assessed values for individual residential properties sold in 
+Ames, IA from 2006 to 2010.
+
+
+### Data collection 
+
+**Describe the method of data collection.**  
+Data is collected by the [Dr. Dean DeCock](http://www.truman.edu/faculty-staff/decock) and published in [Journal of Statistics Education](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf).
+
+
+### Type of study 
+
+**What type of study is this (observational/experiment)?**  
+This is an observational study.
+
+
+### Data Source 
+
+**If you collected the data, state self-collected. If not, provide a citation/link.**  
+Data is collected by the Dr. Dean DeCock and and is available online here: http://www.amstat.org/publications/jse/v19n3/decock/AmesHousing.xls 
+
+Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project
+[Journal of Statistics Education, Volume 19, Number 3(2011)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf)
+
+
+### Response 
+
+**What is the response variable, and what type is it (numerical/categorical)?**  
+The response variable is sale price and is numerical.
+
+
+### Explanatory 
+
+**What is the explanatory variable, and what type is it (numerical/categorival)?**  
+The explanatory variable is above grade (ground) living area in square feet and is numerical.
+
+
+### Relevant summary statistics 
+
+**Provide summary statistics relevant to your research question. For example, if you’re comparing means across groups provide means, SDs, sample sizes of each group. This step requires the use of R, hence a code chunk is provided below. Insert more code chunks as needed.**  
+
+```{r warning=FALSE, message=FALSE}
+describe(df$Gr.Liv.Area)
+
+ggplot(df, aes(x=Gr.Liv.Area)) + geom_histogram()
+
+ggplot(data = house_price) +
+        geom_point(mapping = aes(x = Gr.Liv.Area, y = SalePrice))
+```
+
