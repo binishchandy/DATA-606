@@ -141,6 +141,6 @@ Since the p-value is less than 5%, we reject H0. There is no convincing evidence
 to show assosciation between coffee intake and depression.
 
 (e) 
-I agree with it. Since we don't have convincing evidence to prove that coffee
-drinking linked to less depression in women.
+I agree with it. Since this is an observational study, we cannot make 
+conclusions based on it.
 ```
