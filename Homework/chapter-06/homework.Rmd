@@ -1,0 +1,146 @@
+---
+title: "Assignment - Chapter 06"
+author: "Binish Kurian Chandy"
+date: "April 6, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+6.6
+(a) False. A confidence interval is constructed to estimate the population 
+proportion, not the sample proportion.
+
+(b) True. 95% CI: 46% ± 3%.
+
+(c) True. By the definition of the confidence level.
+
+(d) False. As confidence goes down, margin of error goes down as well.
+```
+
+```
+6.12
+(a) Sample statistic. Since it represents response from the survey takers only.
+
+(b) 
+```
+```{r}
+SE <- sqrt(.48*(1 - .48)/1259)
+lo <- .48 - 1.96 * SE
+hi <- .48 + 1.96 * SE
+c(lo, hi)
+```
+```
+We are 95% confident that 45.24% to 50.75% of US residents approve legalizing
+marijuana
+
+(c) This is a random sample from less than 10% of the population, so the 
+observations are independent. 
+Success-failure condition is satisfied:
+```
+```{r}
+(success <- .48 * 1259)
+(failure <- (1 - .48) * 1259)
+```
+```
+both well above 10.
+
+(d) Since the 95% confidence interval barely covers 50%, the news piece's
+statement is not justified.
+```
+
+```
+6.20
+```
+```{r}
+n <- 1.96^2 * 0.48 * 0.52 / 0.02^2
+ceiling(n)
+```
+
+```
+6.28
+```
+```{r}
+p_ca <- 8/100
+p_or <- 8.8/100
+n_ca <- 11545
+n_or <- 4691
+
+se <- sqrt(p_ca * (1 - p_ca) / n_ca + p_or * (1 - p_or) / n_or)
+point_est <- p_ca - p_or
+lo <- point_est - 1.96 * se
+hi <- point_est + 1.96 * se
+c(lo, hi)
+```
+```
+We are 95% confident thatat the true proportion of Californians having sleep
+deprivation is 1.75% lower to 0.15% higher than Oregonians having sleep
+deprivation.
+
+```
+```
+6.44
+(a) H0: Barking deer prefer each habitat equally likely
+    HA: Barking deer prefer some habitat over other
+    
+(b) Use a chi-squared goodness of fit test.
+
+(c)           Woods  Cultivated grassplot Deciduous forests Other    Total
+    Acutal      4              16                  61       345       426  
+    Expected   20.448        62.622               168.696   174.234   426
+
+    Independence: As it is not provided if sample is random, we have to assume 
+    it.
+    Sample size: All expected counts are atleast 5 
+(d)
+```
+```{r}
+chi_sq <- (4 - 20.448)^2/20.448 + (16 - 62.622)^2/62.622 + 
+  (61 - 168.696)^2/168.696 + (345 - 174.234)^2/174.234
+chi_sq
+df <- 3
+```
+```
+Since the p-value is less than 5%, we reject H0.
+There is convincing evidence that barking deers prefer certain habitats over
+others.
+```
+```
+6.48
+(a) Use a chi-squared goodness of fit test.
+
+(b) H0: There is assosciation between caffeinated coffee consumption and
+        risk of depression in women. 
+    HA: There is no assosciation between caffeinated coffee consumption and
+        risk of depression in women.
+    
+        
+(c)         
+```
+```{r}
+48132 / 50739
+```
+```
+(d) 
+```
+```{r}
+(expected <- (2607 / 50739) * 6617)
+observed <- 373
+(observed - expected) ^ 2 / expected
+```
+```
+(e)
+df = 4
+p < 0.001
+
+(f)
+Since the p-value is less than 5%, we reject H0. There is no convincing evidence 
+to show assosciation between coffee intake and depression.
+
+(e) 
+I agree with it. Since we don't have convincing evidence to prove that coffee
+drinking linked to less depression in women.
+```
