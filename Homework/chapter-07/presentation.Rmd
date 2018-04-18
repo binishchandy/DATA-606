@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 The following regression output is for predicting annual murders per million 
 from percentage living in poverty in a random sample of 20 metropolitan areas.
 ```
-![](/home/bkc/Desktop/murder_poverty.png)
+![](/Users/bchand005c/Documents/CUNY_SPS/DATA-606/Homework/chapter-07/murder_poverty.png)
 ```
 (a) Write out the linear model.
     Annual_murders = -29.901 + 2.559 * % in poverty 
