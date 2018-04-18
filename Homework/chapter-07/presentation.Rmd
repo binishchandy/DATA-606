@@ -1,0 +1,44 @@
+---
+title: "Presentation"
+author: "Binish Kurian Chandy"
+date: "April 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### 7.29 Murders and poverty, Part I.
+```
+The following regression output is for predicting annual murders per million 
+from percentage living in poverty in a random sample of 20 metropolitan areas.
+```
+![](/home/bkc/Desktop/murder_poverty.png)
+```
+(a) Write out the linear model.
+    Annual_murders = -29.901 + 2.559 * % in poverty 
+```
+```
+(b) Interpret the intercept.
+    When % in poverty = 0 ie no poverty, expected murder rate in metropolitan
+    areas is -29.901 per million. This is obviously not a meaningful value, it 
+    just serves to adjust the height of the regression line.
+```
+```
+(c) Interpret the slope
+    For each additional percentage increase in poverty, we expect murders per 
+    million to be higher on average by 2.559.
+```
+```
+(d) Interpret R^2
+    Poverty level explains 70.52% of the variability in murder rates
+    in metropolitan areas.
+```
+```
+(e) Calculate the correlation coefficient.
+```
+```{r}
+(R <- sqrt(0.7052))
+```

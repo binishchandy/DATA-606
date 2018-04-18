@@ -1,0 +1,97 @@
+---
+title: "Homework - Chapter 07"
+author: "Binish Kurian Chandy"
+date: "April 16, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+7.24
+(a) There is a positive, moderate strong, linear assosciation between the 
+calories and carbs.
+(b) Explanatory: calories. Response: carbs(grams)
+(c) We can predict carbs in grams for given calorie on a food item. This will
+be helpul for customers to get an estimate on the carb content in their food.
+(d) Linearity: The plot shows linear trend.
+Nearly normal residuals: fairly normal residual plot
+Constant variability: fairly constant variability
+Independent observations: Not specified.
+
+7.26
+(a)
+```
+```{r}
+(b1 <- (9.41 * 0.67) / 10.37) 
+```
+```
+height = 105.9651 + .608 * (shoulder_girth)
+
+(b) b1: For each additional girth in centimeters, the model predicts and additional
+0.608 centimeters in height.
+b0: When the girth is 0 cm, height is expected to be 105.96 cm. It does not make 
+sense to have a girth of 0 cm in this context. Here, the y-intercept
+serves only to adjust the height of the line and is meaningless by itself.
+
+(c)
+```
+```{r}
+R <- 0.67
+R^2
+```
+```
+About 44.89% of the variability in height is accounted by the model ie. explained
+by the girth in cm.
+
+(d)
+```
+```{r}
+105.9651 + .608 * 100
+```
+```
+(e) A negative residual mean, model over estimated the height.
+```
+```{r}
+ (residual = 160 - 166.7651) 
+```
+```
+(f) No, this calculation would require extrapolation.
+```
+```
+7.30
+```
+```
+(a) Heart_weight = -0.357 + 4.034 * Body_weight 
+```
+```
+(b) When body weight = 0, expected heart weight is -0.357. This is obviously not 
+    a meaningful value, it just serves to adjust the height of the regression line.
+```
+```
+(c) For each additional kg increase in body weight, we expect heart weight in grams 
+    to be higher on average by 4.034.
+```
+```
+(d) Body weight explains 64.66% of the variability in heart weight.
+```
+```
+(e)
+```
+```{r}
+(R <- sqrt(0.6466))
+```
+
+
+
+
+
+
+
+
+
+
+
+
