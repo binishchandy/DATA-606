@@ -83,7 +83,27 @@ by the girth in cm.
 ```{r}
 (R <- sqrt(0.6466))
 ```
+```
+7.40
+(a) y = b0 + b1*x
+    b1 = (y - b0) / x
+```
+```{r}
+(3.9983 - 4.010) / -0.0883
+```
+```
+(b) H0: slope is 0 HA: slope is positive
+since p value is very small, we need to reject H0 in favour of HA ie. apperance
+of the professor has impact on his teaching evaluation score.
 
+(c) Linearity - Follows a fairly linear trend.
+    Nearly normal residuals - Slightly left skewed, but still follows normal model.
+    Constant Variability - Residuals are randomly scattered around 0. So the 
+                           variability is fairly constant.
+    Independent observations - Observations are independent.
+    
+    The conditionis for the least square line ie linear regression is satisfied.
+```
 
 
 
