@@ -1,0 +1,123 @@
+---
+title: "Homework - Chapter 08"
+author: "Binish Kurian Chandy"
+date: "April 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```
+8.2
+(a) baby_weight =  120.07 - 1.93 * parity
+(b) The estimated body weight of non first born babies is 1.93 ounces
+    lower than first born babies.
+```
+```{r}
+(first_born <- 120.07 - 1.93 * 0)
+(non_first_born <- 120.07 - 1.93 * 1)
+```
+```
+(c) H0: b1 = 0 
+    HA: b1 not equal to 0
+    p value from the table is 0.1052
+    p > 0.05, we cannot reject null hypothesis.
+    The data provide strong evidence that the true slope parameter is 0 and that
+    there is no assosciation between parity and birth weight.
+```
+```
+8.4
+(a) number_of_days_absent = 18.93 - 9.11 * eth + 3.10 * sex + 2.15 * lrn
+(b) b_eth : The model predicts 9.11 days decrease in the predicted absenteeism
+    when subject is aboriginal, all else held constant.
+    b_sex : The model predicts 3.10 days increase in the predicted absenteeism
+    when subject is male, all else held constant.
+    b_lrn : The model predicts 2.15 days increase in the predicted absenteeism
+    when subject is slow learner, all else held constant.
+(c) The model over predicts this subject's absenteeism.   
+```
+```{r}
+(number_of_days_absent <- 18.93 - 9.11 * 0 + 3.10 * 1 + 2.15 * 1)
+(e <- 2 - number_of_days_absent)
+```
+```
+(d)
+```
+```{r}
+(r_sq <- 1 - (240.57 / 264.17))
+(r_sq_adjusted <- 1 - (240.57 / 264.17) * (146 -1) / (146 - 3 -1))
+```
+```
+8.8 Remove lrn (learner status)
+```
+```
+8.16
+(a) Damaged O-rings count is inversely proportional to the temperature.
+(b) Intercept and coefficient of temperature define the model. z and p value 
+    care about understanding of which variables are statistically significant 
+    predictors of the response, or if there is interest in producing a simpler 
+    model at the potential cost of a little prediction accuracy.
+(c) log(e)(p / (1 - 1p)) = 11.6630 - 0.2162 * Temperature
+(d) Since the coefficient of tempearature is -ve, the concerns regarding 
+    O-rings are justified(inverse relationship).
+```
+```
+8.18
+(a)
+```
+```{r}
+p <- function(temp) {
+  exponent <- 11.6630 - 0.2162 * temp
+  round(exp(exponent) / (1 + exp(exponent)), 3) 
+}
+p(51)
+p(53)
+p(55)
+```
+```
+(b)
+```
+```{r}
+temp <- seq(from = 51, to = 71, by = 2)
+model_predictions <- unlist(lapply(temp, p))
+plot(temp, model_predictions, type = "o", col = "blue")
+```
+```
+(c) Logistic Regression requires that we fulfill their two key conditions for 
+creating this model.
+ 1. Each predictor x is linearly related to logit p if all other predictors are 
+ held constant.
+ 2. Each outcome Y is independent of the other outcomes.
+ Both conditions are difficult to verify. There has only been 23 shuttle 
+ missions, which may not be enough of a sample size to adequate see if the first 
+ criteria can be satisfied. And for number 2, shuttles are very complicated. It 
+ is unclear that the O ring is independent of other outcomes. This needs further 
+ investigation. Therefore, we may have difficulty assuming that this logistic 
+ regression can be used with the information that we have right now. 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
