@@ -1,0 +1,68 @@
+---
+title: "DATA 606 Data Project"
+author: "Binish Kurian Chandy"
+date: "5/4/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# load data
+require(tidyverse)
+require(psych)
+
+house_price <- as.tibble(read.csv("AmesHousing.csv", header = TRUE))
+
+df <- house_price %>%
+        filter(!is.na(Gr.Liv.Area), !is.na(SalePrice), !is.na(Overall.Qual)) %>%
+        select(Order, Gr.Liv.Area, Overall.Qual, SalePrice)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Part 1 - Introduction
+Is above ground living area (in square feet) and overall finish of the house predictive of it’s sales price?
+
+
+### Part 2 - Data
+The data was collected directly from the Ames City Assessor’s Office in the form of a data dump from their
+records system. The initial Excel file contained 113 variables describing 3970 property sales that
+had occurred in Ames, Iowa between 2006 and 2010. The variables were a mix of nominal,
+ordinal, continuous, and discrete variables used in calculation of assessed values and included
+physical property measurements in addition to computation variables used in the city’s
+assessment process. Some of the variables were removed as they were related to weighting and 
+adjustment factors used in the city’s current modeling system. They required special knowledge 
+or previous calculation for their use. 
+
+After removal of these extraneous variables, 80 variables remained that were directly related to
+property sales.  Most of the variables are exactly the type of information that a typical 
+home buyer would want to know about a potential property  (e.g. When was it built? How big is the lot? 
+How many square feet of living space is in the dwelling? Is the basement finished? How many bathrooms are
+there?). 
+
+The refined data set contains 2930 house sales with the property details. The two main features
+which can be directly related to sales price of the property are above ground living
+area and overall finish of the house. Sales price and above ground living area are continuous variables.
+Overall finish of the house is a categorical variable with 10 levels ranging from
+1 being very poor to 10 being very excellent. Sales price is the response variable and other two 
+are exploratory variables.
+
+Since this is an observational study, the results can only be used to show assosciation between 
+the exploratory variables and the response variable. The result of the study can be 
+generalized to housing market in Iowa since the data set contains samples less than
+10% of the total sales.
+
+
+### Part 3 - Exploratory data analysis
+
+
+### Part 4 - Inference
+
+
+### Part 5 - Conclusion
+
+
+### References
+
+
+### Appendix (optional)
+
+Remove this section if you don't have an appendix
