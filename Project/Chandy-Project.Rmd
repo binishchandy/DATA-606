@@ -1,8 +1,17 @@
 ---
-title: "DATA 606 Data Project"
+title: "DATA 606 - Project"
 author: "Binish Kurian Chandy"
 date: "5/4/2018"
-output: html_document
+output:
+  html_document:
+    highlight: tango
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -26,14 +35,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 Is above ground living area (in square feet) and overall finish of the house predictive of it’s sales price?
 ```
-If you are in the market for a new property or selling a property you own, what factors
+If you are in the market to buy a new property or to sell a property, what factors
 drive the sale price? This is an interesting question to lot of buyers and sellers.
 In this research project, I am exploring data from Ames, Iowa to see what factors
-affects sale price?
+drives sale price?
 
 ### Part 2 - Data
 The data was collected directly from the Ames City Assessor’s Office in the form of a data dump from their
-records system. The initial Excel file contained 113 variables describing 3970 property sales that
+records system. The initial data set contained 113 variables describing 3970 property sales that
 had occurred in Ames, Iowa between 2006 and 2010. The variables were a mix of nominal,
 ordinal, continuous, and discrete variables used in calculation of assessed values and included
 physical property measurements in addition to computation variables used in the city’s
@@ -61,8 +70,6 @@ generalized to housing market in Iowa since the data set contains samples less t
 
 
 ### Part 3 - Exploratory data analysis
-
-#### The Data
 ```{r}
 dim(data_set)
 str(data_set[,c(1:10, 81)])
@@ -95,8 +102,8 @@ cor_numVar <- cor_numVar[CorHigh, CorHigh]
 
 corrplot.mixed(cor_numVar, tl.col="black", tl.pos = "lt")
 ```  
-From the visualization above the two highly correlated variables to SalePrice are
-Overall.Qual and Gr.Liv.Area.  
+From the visualization above the two highly correlated variables to SalePrice is
+Gr.Liv.Area.  
 
 #### Above grade (ground) living area square feet
 Gr.Liv.Area is the continuous variable with highest correlation to Sale Price.
@@ -133,8 +140,9 @@ qqline(multiple_reg$residuals)
 plot(multiple_reg$residuals ~ data_set$Gr.Liv.Area)
 abline(h = 0)
 ```   
-Nearly normal residuals : The plot closely follows normal modal.
-Constant variability : Variability is constant around 0.
+
+Nearly normal residuals : The plot closely follows normal modal.  
+Constant variability : Variability is constant around 0.  
 Independent observations: We can assume this to be met since this is an
 observational study that represents less than 10% of the population.  
 
@@ -145,15 +153,15 @@ confint(multiple_reg, level = 0.95)
 ```
 
 ### Part 5 - Conclusion
-The interpretation of the coefficients in multiple regression is slightly different 
+* The interpretation of the coefficients in multiple regression is slightly different 
 from that of simple regression. The estimate of `Gr.Liv.Area` reflects difference
 in sale price for each additional square foot above ground living area when holding
 the overall quality constant.   
-The research question provided some insight into what key factors could drive the price of a
-property on sale.  
-Since this is an observational study, the results of the analysis shows sale price has
-strong association with indicator variables. 
-Model using Lasso regression is a next step for this research question.  
+* The research question provided insight into what key factors could drive the price of a
+  property on sale.  
+* Since this is an observational study, the results of the analysis shows sale price has
+  strong association with indicator variables. 
+* Model using Lasso regression is a next step for this research question.  
 
 ### References
 Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project
